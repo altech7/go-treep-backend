@@ -1,9 +1,9 @@
-import { Column, Entity, PrimaryColumn } from 'typeorm'
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 import { TraceableEntity } from '../traceable/traceable.entity'
 
-@Entity()
+@Entity({ name: 't_e_user' })
 export class UserEntity extends TraceableEntity {
-  @PrimaryColumn({ type: 'uuid', unique: true })
+  @PrimaryGeneratedColumn('uuid')
   id: string
 
   @Column()
@@ -15,6 +15,6 @@ export class UserEntity extends TraceableEntity {
   @Column({ unique: true })
   email: string
 
-  @Column()
+  @Column({ nullable: false })
   password: string
 }

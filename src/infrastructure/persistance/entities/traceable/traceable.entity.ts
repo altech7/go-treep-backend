@@ -4,7 +4,6 @@ export abstract class TraceableEntity extends BaseEntity {
   @CreateDateColumn({
     type: 'timestamp',
     nullable: false,
-    select: true,
     name: 'created_at',
   })
   created_date: Date
@@ -13,14 +12,14 @@ export abstract class TraceableEntity extends BaseEntity {
     type: 'timestamp',
     nullable: true,
     onUpdate: 'CURRENT_TIMESTAMP',
-    select: false,
+    name: 'updated_at',
   })
   updated_date: Date
 
   @DeleteDateColumn({
     type: 'timestamp',
     nullable: true,
-    select: false,
+    name: 'deleted_at',
   })
   deleted_date: Date
 }
