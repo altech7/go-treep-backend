@@ -4,10 +4,10 @@ import { Injectable, UnauthorizedException } from '@nestjs/common'
 import { QueryBus } from '@nestjs/cqrs'
 
 import { User } from '../../domain/user'
-import { FindUserQuery } from '../../application/queries'
 
 import { Payload } from './auth.service'
 import { UserPayload } from './user-payload.dto'
+import { FindUserQuery } from '../../application/queries/FindUser/find-user.query'
 
 const { JWT_IGNORE_EXPIRATION, JWT_SECRET } = process.env
 

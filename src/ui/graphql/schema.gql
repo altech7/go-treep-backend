@@ -8,24 +8,28 @@ type AuthPayload {
   user: User!
 }
 
+type Country {
+  alpha2Code: ID!
+  alpha3Code: ID!
+  name: String!
+}
+
+input CountryFindInput {
+  query_string: String
+}
+
 type Mutation {
   signIn(input: UserCredentialsInput!): AuthPayload!
   signUp(input: UserRegisterInput!): AuthPayload!
-  createUser(input: UserCreateInput!): User!
 }
 
 type Query {
   me: User!
+  countries(input: CountryFindInput): [Country!]!
 }
 
 type User {
   id: ID!
-  firstName: String!
-  lastName: String!
-  email: String!
-}
-
-input UserCreateInput {
   firstName: String!
   lastName: String!
   email: String!

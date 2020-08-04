@@ -5,9 +5,9 @@ import { CommandBus, QueryBus } from '@nestjs/cqrs'
 import { User, CreateUserInterface } from '../../domain/user'
 
 import { RegisterUserCommand } from '../../application/commands'
-import { FindUserQuery } from '../../application/queries'
 
 import { UserPayload } from './user-payload.dto'
+import { FindUserQuery } from '../../application/queries/FindUser/find-user.query'
 
 export interface Payload {
   userId: string

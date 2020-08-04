@@ -3,6 +3,7 @@ import { CqrsModule } from '@nestjs/cqrs'
 import { GraphQLModule } from '@nestjs/graphql'
 import { AuthGraphModule } from './auth/auth.module'
 import { UserGraphModule } from './user/user.module'
+import { CountryGraphModule } from './country/country.module'
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { UserGraphModule } from './user/user.module'
     }),
     AuthGraphModule,
     UserGraphModule,
+    CountryGraphModule,
   ],
 })
 export class GraphModule {}

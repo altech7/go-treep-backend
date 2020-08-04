@@ -1,10 +1,10 @@
-import { Module, Global, HttpModule } from '@nestjs/common'
+import { Global, Module } from '@nestjs/common'
 
 import { PersistanceModule } from './persistance/persistance.module'
 
 @Global()
 @Module({
-  imports: [HttpModule, PersistanceModule],
+  imports: [PersistanceModule],
   exports: [PersistanceModule],
 })
 export class InfrastructureModule {}
