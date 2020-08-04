@@ -32,3 +32,15 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# env
+/env/*
+!/env/env.config.ts
+.env
+
+# typeorm
+ormconfig.json
+/test/web-hooks/node_modules/
+
+# docker
+/docker-data
